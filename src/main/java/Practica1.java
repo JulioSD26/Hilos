@@ -4,8 +4,8 @@ public class Practica1 {
                 args) {
             int n = Integer.parseInt(s);
 
-           // Thread t = new Thread(new Factorial(n));
-            //t.start();
+           Thread t = new Thread( new Factorial(n));
+           t.start();
         }
     }
 }

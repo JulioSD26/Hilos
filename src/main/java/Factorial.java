@@ -1,15 +1,14 @@
-public class Factorial {
-    public static void main(String[] args) {
-        int n = 0;
-        for (String s:
-             args) {
-            n = Integer.parseInt(s);
-            int factorial = 1;
-
-            for (int i = 1; i <= n; i++) {
-                factorial = factorial * i;
-            }
-            System.out.println("El factorial de "+ n +" es: "+ factorial);
+public class Factorial implements Runnable{
+    int numero = 1;
+    public Factorial (int n){
+        numero = n;
+    }
+    public void run(){
+        int factorial = 1;
+        for (int i = 1; i <= numero; i++) {
+            factorial = factorial * i;
         }
+        String name = Thread.currentThread().getName();
+        System.out.println("Hilo: "+ name +" El factorial de "+ numero +" es: "+ factorial);
     }
 }
